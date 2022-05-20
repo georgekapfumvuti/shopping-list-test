@@ -1,10 +1,10 @@
-describe('verify Shopping List', () => {
+describe('Shopping List Automation Tests', () => {
 
   beforeEach(() => {
     cy.visit("http://localhost:5000");
   })
 
-  it('Verify add functionality ', () => {
+  it('SL0006_Create a new shopping list item ', () => {
     cy.get("button").should('have.class', '_2abd6af1').eq(0).click();
     cy.get('input[type="text"]').click().type("Test");
     cy.get('input[type="submit"]').click();
@@ -15,7 +15,7 @@ describe('verify Shopping List', () => {
     cy.get('li[role="button"]').should('have.length', 8)
   })
 
-  it('Verify delete functionality ', () => {
+  it('SL0010_Delete an unchecked shopping list item ', () => {
     cy.get("button").should('have.class', '_2abd6af1').eq(0).click();
     cy.get('input[type="text"]').click().type("Test");
     cy.get('input[type="submit"]').click();
@@ -27,7 +27,7 @@ describe('verify Shopping List', () => {
     cy.get('li[role="button"]').should('have.length', 6)
   })
  
-  it('Verify checkbox functionality ', () => {
+  it('SL007_Check and Uncheck a shopping list item ', () => {
     cy.get("button").should('have.class', '_2abd6af1').eq(0).click();
     cy.get('input[type="text"]').click().type("Test");
     cy.get('input[type="submit"]').click();
